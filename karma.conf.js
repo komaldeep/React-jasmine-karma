@@ -3,9 +3,15 @@ var webpackConfig = require('./webpack.config')
 
 module.exports = function (config) {
   config.set({
-    browsers: ['Chrome'],
+    browsers: ['Chrome', 'Chrome_without_security'],
     singleRun: true,
     frameworks: [ 'jasmine' ],
+    customLaunchers: {
+      Chrome_without_security: {
+        base: 'Chrome',
+        flags: ['--disable-web-security']
+      }
+    },
     files: [
       'tests.webpack.js' //just load this file
     ],

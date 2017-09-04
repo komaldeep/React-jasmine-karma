@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "karma start",
+    "test": "karma start --browsers Chrome,Chrome_without_security",
     "webpack": "webpack-dev-server"
   },
   "author": "Komaldeep",
@@ -16,11 +16,12 @@
     "babel-preset-react": "^6.3.13",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
+    "karma-chrome-launcher": "^2.2.0",
     "karma-cli": "^0.1.2",
     "karma-jasmine": "^0.3.8",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-sourcemap-loader": "^0.3.7",
-    "karma-webpack": "^1.7.0",
+    "karma-webpack": "^1.8.1",
     "phantomjs-prebuilt": "^2.1.7",
     "webpack": "^1.12.12",
     "webpack-dev-server": "^1.16.1"
