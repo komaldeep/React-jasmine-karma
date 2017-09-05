@@ -10,14 +10,24 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js?$/,
-        loader: 'babel-loader',
+        exclude: /node_modules/,
+        loader: 'babel',
         query: {
-          presets: ['es2015', 'react']
+          presets: ['react', 'es2015', 'stage-1'],
         },
-        exclude: /node_modules/
+      },
+      {
+        test:/\.css$/,
+        loader:'style-loader!css-loader'
       }
-    ]
+    ],
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+  },
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './',
   },
   plugins: [
   ]

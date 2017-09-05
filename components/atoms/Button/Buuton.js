@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import _ from 'lodash';
 
-// import styles from './Button.id.scss';
+import styles from './Buuton.css';
 // import stylesSkins from './ButtonSkins.id.scss';
 // import stylesSizes from './ButtonSizes.id.scss';
 
@@ -19,15 +18,13 @@ export const buttonSkins = {
   SECONDARY: 'secondary',
 };
 
-const getEnumValues = (obj) => Object.keys(obj).map(key => obj[key]);
+export default class Buuton extends Component {
 
-export default class Button extends Component {
-
-  static displayName = 'atoms/Button';
+  static displayName = 'atoms/Button/Buuton.js';
 
   static propTypes = {
-    size: PropTypes.oneOf(getEnumValues(buttonSizes)),
-    skin: PropTypes.oneOf(getEnumValues(buttonSkins)),
+    // size: PropTypes.string,
+    // skin: PropTypes.string,
     disabled: PropTypes.bool,
     onClick: PropTypes.func,
     children: PropTypes.node,
@@ -38,14 +35,13 @@ export default class Button extends Component {
   static defaultProps = {
     skin: buttonSkins.PRIMARY,
     size: buttonSizes.MD,
-    onClick: () => {
-    },
+    onClick: () => {},
     disabled: false,
     block: false,
   };
 
 
-  handleClick = () => {
+  handleClick() {
     this.props.onClick();
   };
 
@@ -53,11 +49,6 @@ export default class Button extends Component {
   render() {
     const className = cx(
       styles.btn,
-      stylesSkins[`btn-${this.props.skin}`],
-      stylesSizes[`btn-${this.props.size}`],
-      {
-        [styles.block]: this.props.block,
-      }
     );
 
     return (
