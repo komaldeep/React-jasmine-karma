@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './atoms/Button/Buuton.js';
+import Button, {buttonSizes , buttonSkins}  from './atoms/Button/Buuton.js';
 
 class Hello extends React.Component {
   render() {
@@ -7,10 +7,11 @@ class Hello extends React.Component {
       <div>
         <h1> hey more will be here</h1>
         <Button
-          size={this.props.size}
+          size={buttonSizes.LG}
+          skin={buttonSkins.PRIMARY}
           onClick={this.props.onClick}
         >
-          BUTTON exist here
+          Button Exist HERE
         </Button>
       </div>
     )

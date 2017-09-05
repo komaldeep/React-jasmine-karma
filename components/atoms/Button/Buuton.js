@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
 
-import styles from './Buuton.css';
-// import stylesSkins from './ButtonSkins.id.scss';
-// import stylesSizes from './ButtonSizes.id.scss';
+import './Buuton.scss';
 
-const buttonSizes = {
+export const buttonSizes = {
   LG: 'lg',
   MD: 'md',
   SM: 'sm',
@@ -23,8 +21,8 @@ export default class Buuton extends Component {
   static displayName = 'atoms/Button/Buuton.js';
 
   static propTypes = {
-    // size: PropTypes.string,
-    // skin: PropTypes.string,
+    size: PropTypes.string,
+    skin: PropTypes.string,
     disabled: PropTypes.bool,
     onClick: PropTypes.func,
     children: PropTypes.node,
@@ -41,26 +39,29 @@ export default class Buuton extends Component {
   };
 
 
-  handleClick() {
-    this.props.onClick();
+  handleClick = () => {
+    // this.props.onClick();
+    console.log('ókay click comes here');
   };
 
 
   render() {
-    const className = cx(
-      styles.btn,
-    );
+
+    console.log(this.props.size , 'this.props.size')
+
+    const classNam = classNames({
+      btn: true,
+      large: this.props.size === 'lg',
+    });
 
     return (
       <button
         onClick={ this.handleClick }
-        className={ className }
+        className={ classNam }
         disabled={ this.props.disabled }
         type={this.props.type}
       >
-        <div className={styles.flexContainer}>
-          { this.props.children }
-        </div>
+        { this.props.children }
       </button>
     );
   }
