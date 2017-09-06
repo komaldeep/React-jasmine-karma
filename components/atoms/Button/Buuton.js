@@ -47,17 +47,15 @@ export default class Buuton extends Component {
 
   render() {
 
-    console.log(this.props.size , 'this.props.size')
-
-    const classNam = classNames({
-      btn: true,
-      large: this.props.size === 'lg',
-    });
-
     return (
       <button
         onClick={ this.handleClick }
-        className={ classNam }
+        className={
+          classNames({
+            btn: true,
+            large: this.props.size === 'lg',
+          })
+        }
         disabled={ this.props.disabled }
         type={this.props.type}
       >

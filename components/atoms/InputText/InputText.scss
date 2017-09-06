@@ -1,0 +1,75 @@
+.wrap {
+  position: relative;
+}
+
+.input {
+  height: 2.1rem;
+  padding: .45rem 2.5rem .4rem .8rem; //check in mobile views
+  appearance: none;
+
+  //@include media-breakpoint-down(xs) {
+  //  padding-right: 2rem;
+  //}
+  //@include media-breakpoint-down(md) {
+  //  padding: .3rem 2.5rem .3rem .8rem; //check in mobile views
+  //  font-size: $font-size-400;
+  //}
+  //
+  //&:focus {
+  //  @include input-focus;
+  //}
+  //
+  //&:disabled {
+  //  @include input-disabled;
+  //}
+}
+
+::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.hasDanger {
+  padding-right: .8rem;
+}
+
+.disabled {
+  //@include input-disabled;
+}
+
+.pending {
+  //@include input-pending;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.reset {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  width: .8rem;
+  height: 100%;
+  padding-right: 1.75rem;
+  padding-left: .75rem;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  //@include media-breakpoint-down(xs) {
+  //  padding-right: 1.35rem;
+  //}
+  //
+  //&:focus {
+  //  outline: none;
+  //}
+  //
+  //svg {
+  //  width: .6rem;
+  //  height: 100%;
+  //}
+}

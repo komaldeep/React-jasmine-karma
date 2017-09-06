@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import classNames from 'classnames';
+import './InputText.scss';
 
 export default class InputText extends Component {
 
@@ -55,15 +56,8 @@ export default class InputText extends Component {
       disableDeleteButton,
     } = this.props;
 
-    const hasValueAndSuccess = (showSuccess && !_.isEmpty(this.state.value));
-
-    const showInputStatus = (
-      (hasValueAndSuccess && !this.keepFocus)
-      || pending
-    );
-
     return (
-      <div className={styles.wrap}>
+      <div className="wrap">
         <input
           type={type}
           name={name}
@@ -72,17 +66,12 @@ export default class InputText extends Component {
           placeholder={placeholder}
           ref={(input) => { this.inputField = input; }}
           className={
-            cx({
-              [bootstrap.formControl]: true,
-              [styles.input]: true,
-              [styles.hasDanger]: showError && !this.keepFocus,
-              [styles.pending]: pending,
+            classNames({
+              input: true,
             })
           }
           disabled={disabled}
-          autoComplete={autocomplete}
           onKeyPress={onKeyPress}
-          pattern={pattern}
           maxLength={maxLength}
         />
 
