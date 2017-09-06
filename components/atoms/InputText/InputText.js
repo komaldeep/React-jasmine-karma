@@ -16,7 +16,6 @@ export default class InputText extends Component {
     placeholder: PropTypes.string,
     handleChange: PropTypes.func,
     onKeyPress: PropTypes.func,
-    pattern: PropTypes.string,
     maxLength: PropTypes.number,
     disableDeleteButton: PropTypes.bool,
   };
@@ -24,7 +23,6 @@ export default class InputText extends Component {
   static defaultProps = {
     type: 'text',
     placeholder: '',
-    pattern: null,
     disabled: false,
     showSuccess: false,
     showError: false,
@@ -37,9 +35,12 @@ export default class InputText extends Component {
     super(props);
     this.keepFocus = false;
     this.state = {
-      showDeleteButton: false,
       value: props.value,
     };
+  }
+
+  handleOnChangeValue = () => {
+
   }
 
   render() {
@@ -73,8 +74,8 @@ export default class InputText extends Component {
           disabled={disabled}
           onKeyPress={onKeyPress}
           maxLength={maxLength}
+          onChange={this.handleOnChangeValue}
         />
-
       </div>
     );
   }

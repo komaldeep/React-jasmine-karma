@@ -2,14 +2,15 @@ import React from 'react';
 import Button, {buttonSizes , buttonSkins}  from './atoms/Button/Buuton.js';
 import InputText from './atoms/InputText/InputText';
 
-class Hello extends React.Component {
+class Index extends React.Component {
   render() {
     return(
       <div>
-        <h1> hey more will be here</h1>
+        <h1> Hey more will be here</h1>
         <InputText
           name="input field name is"
           type="text"
+          placeholder="Enter your name"
         />
 
         <Button
@@ -24,4 +25,4 @@ class Hello extends React.Component {
   }
 }
 
-export default Hello;
+export default Index;

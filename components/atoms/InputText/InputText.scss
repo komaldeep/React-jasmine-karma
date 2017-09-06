@@ -4,24 +4,9 @@
 
 .input {
   height: 2.1rem;
-  padding: .45rem 2.5rem .4rem .8rem; //check in mobile views
-  appearance: none;
-
-  //@include media-breakpoint-down(xs) {
-  //  padding-right: 2rem;
-  //}
-  //@include media-breakpoint-down(md) {
-  //  padding: .3rem 2.5rem .3rem .8rem; //check in mobile views
-  //  font-size: $font-size-400;
-  //}
-  //
-  //&:focus {
-  //  @include input-focus;
-  //}
-  //
-  //&:disabled {
-  //  @include input-disabled;
-  //}
+  padding: .45rem 2.5rem .4rem .8rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 ::-ms-clear {
@@ -35,12 +20,10 @@
 }
 
 .disabled {
-  //@include input-disabled;
+
 }
 
 .pending {
-  //@include input-pending;
-
   &:focus {
     box-shadow: none;
   }
@@ -59,17 +42,4 @@
   border: none;
   outline: none;
   background: transparent;
-
-  //@include media-breakpoint-down(xs) {
-  //  padding-right: 1.35rem;
-  //}
-  //
-  //&:focus {
-  //  outline: none;
-  //}
-  //
-  //svg {
-  //  width: .6rem;
-  //  height: 100%;
-  //}
 }

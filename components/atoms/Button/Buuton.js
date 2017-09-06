@@ -40,7 +40,6 @@ export default class Buuton extends Component {
 
 
   handleClick = () => {
-    // this.props.onClick();
     console.log('ókay click comes here');
   };
 
